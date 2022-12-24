@@ -71,9 +71,9 @@
   width: 140px;
 }
 .grid-container .grid-item:last-child .content-wrapper .sub-content h5 {
-  font-family: "Avenir";
   font-size: 13px;
   font-weight: 900;
+  font-family: "Avenir";
   line-height: 17px;
   letter-spacing: 0em;
   text-align: left;
