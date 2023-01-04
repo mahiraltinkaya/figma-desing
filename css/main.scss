@@ -1,42 +1,5 @@
-@font-face {
-  font-family: "Avenir";
-  src: url("../public/fonts/Avenir.ttc");
-}
-
-@font-face {
-  font-family: "ITCAvantGardePro-Bk";
-  src: url("../public/fonts/ITCAvantGardePro-Bk.otf");
-}
-
-@font-face {
-  font-family: "ITCAvantGardePro-Bold";
-  src: url("../public/fonts/ITCAvantGardePro-Bold.otf");
-}
-
-@font-face {
-  font-family: "ITCAvantGardePro-Demi";
-  src: url("../public/fonts/ITCAvantGardePro-Demi.otf");
-}
-@font-face {
-  font-family: "ITCAvantGardePro-Md";
-  src: url("../public/fonts/ITCAvantGardePro-Md.otf");
-}
-
-$font-avenir: "Avenir";
-$font-avg-bk: "ITCAvantGardePro-Bk";
-$font-avg-bold: "ITCAvantGardePro-Bold";
-$font-avg-demi: "ITCAvantGardePro-Demi";
-$font-avg-md: "ITCAvantGardePro-Md";
-
-$mobile-s: "320px";
-$mobile-m: "375px";
-$mobile-l: "425px";
-$tablet: "768px";
-$tablet-m: "960px";
-$laptop: "1024px";
-$laptop-l: "1440px";
-$laptop-xl: "1920px";
-$tv: "2560px";
+@import "fonts.scss";
+@import "variables.scss";
 
 * {
   padding: 0;
@@ -122,64 +85,135 @@ $tv: "2560px";
         display: flex;
         flex-direction: row;
         overflow-x: auto;
-        .product {
-          width: 230px;
-          margin-right: 30px;
-          img {
-            height: 100%;
-            width: 230px;
-            height: 310px;
-          }
-          h3 {
-            margin: 5px 0px;
-            font-family: $font-avenir;
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 20px;
-            letter-spacing: 0em;
-            text-align: left;
-          }
-          .dots {
+        .slide-group {
+          position: relative;
+          display: flex;
+          justify-content: start;
+          overflow: hidden;
+          width: 100%;
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            .label {
-              font-family: $font-avenir;
-              font-size: 13px;
-              font-weight: 500;
-              line-height: 20px;
-              letter-spacing: 0em;
-              text-align: center;
-            }
-            .dotation {
-              display: flex;
-              justify-content: center;
-              div {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                margin-left: 5px;
+            li {
+              padding-right: 30px;
 
-                &:first-child {
-                  border: 2px solid rgb(2, 80, 2);
-                  padding: 2px;
-                  background-color: #a6cc99;
+              .product {
+                width: 230px;
+                margin-right: 30px;
+                img {
+                  height: 100%;
+                  width: 230px;
+                  height: 310px;
                 }
-                &:nth-child(2) {
-                  background-color: #cc9999;
+                h3 {
+                  margin: 5px 0px;
+                  font-family: $font-avenir;
+                  font-size: 13px;
+                  font-weight: 400;
+                  line-height: 20px;
+                  letter-spacing: 0em;
+                  text-align: left;
                 }
-                &:nth-child(3) {
-                  background-color: #cb99cc;
+                .dots {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  .label {
+                    font-family: $font-avenir;
+                    font-size: 13px;
+                    font-weight: 500;
+                    line-height: 20px;
+                    letter-spacing: 0em;
+                    text-align: center;
+                  }
+                  .dotation {
+                    display: flex;
+                    justify-content: center;
+                    div {
+                      width: 12px;
+                      height: 12px;
+                      border-radius: 50%;
+                      margin-left: 5px;
+
+                      &:first-child {
+                        border: 2px solid rgb(2, 80, 2);
+                        padding: 2px;
+                        background-color: #a6cc99;
+                      }
+                      &:nth-child(2) {
+                        background-color: #cc9999;
+                      }
+                      &:nth-child(3) {
+                        background-color: #cb99cc;
+                      }
+                      &:last-child {
+                        background-color: #a6cc99;
+                      }
+                    }
+                  }
                 }
+
                 &:last-child {
-                  background-color: #a6cc99;
+                  margin: 0;
                 }
               }
             }
           }
+          .prev-button,
+          .next-button {
+            width: 48px;
+            height: 48px;
+            border: 0.5px solid #aaa999;
+            border-radius: 1px;
+            background-color: transparent;
+            cursor: pointer;
+            position: absolute;
+            z-index: 2;
+            top: calc(50% - 24px);
 
-          &:last-child {
-            margin: 0;
+            i {
+              font-size: 15px;
+              color: rgb(38, 38, 38);
+              -webkit-text-stroke: 0px white;
+            }
+
+            &:hover {
+              transition: 0.2s;
+              background-color: #edededa8;
+              border: 0.5px solid #d0cfc8;
+
+              i {
+                color: #aaa999;
+              }
+            }
+          }
+
+          .prev-button {
+            left: 1rem;
+            display: none;
+          }
+
+          .next-button {
+            right: 1rem;
+          }
+
+          .slide {
+            position: relative;
+            inset: 0;
+            opacity: 0;
+            display: none;
+          }
+
+          [data-slide] {
+            display: block;
+            opacity: 1;
+          }
+        }
+        @media screen and (max-width: $tablet-m) {
+          .slide-group {
+            overflow: auto;
           }
         }
       }

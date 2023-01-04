@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Figma Desing</title>
     <link rel="stylesheet" href="/css/main.css" />
+    <script src="/public/js/main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <section>
@@ -29,50 +37,74 @@
             </div>
           </div>
           <div class="product-container">
-            <div class="product">
-              <img
-                src="/public/images/green.png"
-                alt="green sweetshirt image"
-              />
-              <h3>365 Signature Hoodie</h3>
-              <div class="dots">
-                <div class="label">€33.95</div>
-                <div class="dotation">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
-            </div>
-            <div class="product">
-              <img
-                src="/public/images/yellow.png"
-                alt="yellow tracksuit image"
-              />
-              <h3>Organic Skinny High Waist Jeans</h3>
-              <div class="dots">
-                <div class="label">€33.95</div>
-                <div class="dotation">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
-            </div>
-            <div class="product">
-              <img src="/public/images/blue.png" alt="blue sweetshirt image" />
-              <h3>Organic Skinny High Waist Jeans</h3>
-              <div class="dots">
-                <div class="label">€33.95</div>
-                <div class="dotation">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
+            <div class="slide-group" data-slide-group>
+              <button
+                class="slide-button prev-button"
+                data-slider-button="prev"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button
+                class="slide-button next-button"
+                data-slider-button="next"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+              <ul data-slider>
+                <li class="slide" data-slide>
+                  <div class="product" active-slide>
+                    <img
+                      src="/public/images/green.png"
+                      alt="green sweetshirt image"
+                    />
+                    <h3>365 Signature Hoodie</h3>
+                    <div class="dots">
+                      <div class="label">€33.95</div>
+                      <div class="dotation">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="slide" data-slide>
+                  <div class="product">
+                    <img
+                      src="/public/images/yellow.png"
+                      alt="yellow tracksuit image"
+                    />
+                    <h3>Organic Skinny High Waist Jeans</h3>
+                    <div class="dots">
+                      <div class="label">€33.95</div>
+                      <div class="dotation">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="slide" data-slide>
+                  <div class="product">
+                    <img
+                      src="/public/images/blue.png"
+                      alt="blue sweetshirt image"
+                    />
+                    <h3>Organic Skinny High Waist Jeans</h3>
+                    <div class="dots">
+                      <div class="label">€33.95</div>
+                      <div class="dotation">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -80,3 +112,68 @@
     </section>
   </body>
 </html>
+
+<!-- <div class="slide-group">
+  <div class="button prev">
+    <img src="/public/icons/left.svg" alt="" />
+  </div>
+  <div class="button next">
+    <img src="/public/icons/right.svg" alt="" />
+  </div>
+  <ul>
+    <li class="slide">
+      <div class="product" active-slide>
+        <img
+          src="/public/images/green.png"
+          alt="green sweetshirt image"
+        />
+        <h3>365 Signature Hoodie</h3>
+        <div class="dots">
+          <div class="label">€33.95</div>
+          <div class="dotation">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="slide">
+      <div class="product">
+        <img
+          src="/public/images/yellow.png"
+          alt="yellow tracksuit image"
+        />
+        <h3>Organic Skinny High Waist Jeans</h3>
+        <div class="dots">
+          <div class="label">€33.95</div>
+          <div class="dotation">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="slide">
+      <div class="product">
+        <img
+          src="/public/images/blue.png"
+          alt="blue sweetshirt image"
+        />
+        <h3>Organic Skinny High Waist Jeans</h3>
+        <div class="dots">
+          <div class="label">€33.95</div>
+          <div class="dotation">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div> -->
